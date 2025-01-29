@@ -547,7 +547,7 @@ jenkins:
             workingDir: "<%= agent['agentDir'] ? agent['agentDir'] : @jcasc['agents_setup']['ubuntu']['agentDir'] %>"
           label: "container kubernetes <%= k8s_name %> <%= agent['labels'] ? agent['labels'].join(' ') : '' %>"
           name: "<%= agent['name'] %>"
-          usageMode: "<%= agent['useAsMuchAsPossible'] == true ? 'NORMAL' : 'EXCLUSIVE' %>"
+          nodeUsageMode: "<%= agent['useAsMuchAsPossible'] == true ? 'NORMAL' : 'EXCLUSIVE' %>"
         <%- if agent['imagePullSecrets'] -%>
           imagePullSecrets:
           - name: "<%= agent['imagePullSecrets'] %>"
